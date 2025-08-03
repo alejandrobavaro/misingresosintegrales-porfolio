@@ -1,0 +1,560 @@
+/* ==============================================
+   ESTRUCTURA BASE - MOBILE FIRST
+   ============================================== */
+
+   .ingresos-cobros-container {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 8px;
+    background-color: rgba(245, 245, 245, 0.95);
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+  
+    /* ESTADOS DE CARGA/ERROR */
+    .loading, .error {
+      padding: 16px;
+      text-align: center;
+      font-size: 14px;
+      background-color: #fff;
+      border-radius: 4px;
+      margin: 8px 0;
+    }
+  
+    .error {
+      color: #d32f2f;
+      background-color: #ffebee;
+    }
+  
+    /* ==============================================
+       SECCIÓN DE CONTROLES SUPERIORES
+       ============================================== */
+    .controles-superiores {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 12px;
+      padding: 12px;
+      background-color: #fff;
+      border-radius: 4px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  
+      /* Título de sección */
+      .titulo-seccion {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        padding-bottom: 8px;
+        border-bottom: 1px solid #eee;
+  
+        h2 {
+          font-size: 18px;
+          color: #333;
+          margin: 0;
+          font-weight: 600;
+        }
+  
+        .fecha-actual {
+          font-size: 14px;
+          color: #666;
+          background-color: #f5f5f5;
+          padding: 4px 8px;
+          border-radius: 4px;
+          align-self: flex-start;
+        }
+      }
+  
+      /* Filtro por estado */
+      .filtro-estado {
+        width: 100%;
+        
+        select {
+          width: 100%;
+          padding: 8px;
+          border: 1px solid #ddd;
+          border-radius: 4px;
+          font-size: 14px;
+          background-color: #fff;
+        }
+      }
+  
+      /* Botones de exportación */
+      .botones-exportacion {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+  
+        .btn-exportar {
+          flex: 1 1 120px;
+          padding: 8px;
+          background-color: #2979ff;
+          color: white;
+          border: none;
+          border-radius: 4px;
+          font-size: 14px;
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 6px;
+          transition: background-color 0.2s;
+  
+          i {
+            font-size: 16px;
+          }
+  
+          &:hover {
+            background-color: #2962ff;
+          }
+  
+          &:active {
+            background-color: #004ecb;
+          }
+        }
+      }
+  
+      /* Resumen de totales */
+      .resumen-totales {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+  
+        .total-card {
+          flex: 1 1 140px;
+          min-height: 80px;
+          padding: 10px;
+          background-color: #f9f9f9;
+          border-radius: 4px;
+          box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+  
+          span {
+            display: block;
+            color: #666;
+            font-size: 12px;
+            font-weight: 500;
+          }
+  
+          strong {
+            font-family: 'Courier New', monospace;
+            font-size: 16px;
+            color: #333;
+            display: block;
+            margin: 4px 0;
+            
+            &.pendiente {
+              color: #d32f2f;
+            }
+            
+            &.saldo-anterior {
+              color: #ff9800;
+            }
+          }
+  
+          .variacion,
+          .porcentaje,
+          .detalle-pendiente,
+          .info-saldo {
+            font-size: 11px;
+            color: #666;
+            margin-top: 4px;
+  
+            .positivo {
+              color: #4caf50;
+            }
+  
+            .negativo {
+              color: #f44336;
+            }
+          }
+        }
+      }
+    }
+  
+    /* ==============================================
+       TABLA PRINCIPAL
+       ============================================== */
+    .tabla-reorganizada {
+      width: 100%;
+      overflow-x: auto;
+      background-color: #fff;
+      border-radius: 4px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 14px;
+        table-layout: fixed;
+  
+        th, td {
+          padding: 6px 4px;
+          border: 1px solid #eaeaea;
+          vertical-align: top;
+          box-sizing: border-box;
+        }
+  
+        th {
+          background-color: #f0f0f0;
+          font-weight: 600;
+          white-space: nowrap;
+          text-align: left;
+        }
+  
+        tr.pendiente {
+          background-color: #fff0f0;
+        }
+  
+        /* Estilos específicos por columna */
+        .id-col {
+          width: 32px;
+          text-align: center;
+          padding: 4px 2px !important;
+          
+          .id-minimo {
+            font-size: 10px;
+            font-weight: bold;
+            color: #555;
+            display: inline-block;
+            min-width: 16px;
+          }
+        }
+  
+        .imagen-col {
+          width: 44px;
+          padding: 4px 2px !important;
+          text-align: center;
+          
+          .mini-imagen {
+            width: 40px;
+            height: 40px;
+            object-fit: cover;
+            border-radius: 3px;
+            cursor: pointer;
+            border: 1px solid #ddd;
+          }
+        }
+  
+        .propiedad-col {
+          width: 220px;
+          
+          .propiedad-info {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            
+            .nombre-propiedad {
+              font-weight: 500;
+              white-space: nowrap;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              font-size: 12px;
+            }
+            
+            .detalles-propiedad {
+              display: flex;
+              flex-direction: column;
+              gap: 2px;
+              font-size: 10px;
+              color: #666;
+            }
+          }
+        }
+  
+        .contrato-col {
+          width: 120px;
+          
+          .contrato-info {
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+            
+            .monto-contrato {
+              font-family: 'Courier New', monospace;
+              font-weight: 500;
+              white-space: nowrap;
+              font-size: 11px;
+              
+              &.con-aumento {
+                color: #E65100;
+                font-weight: bold;
+              }
+            }
+            
+            .fechas-contrato {
+              font-size: 9px;
+              color: #666;
+            }
+          }
+        }
+  
+        .alerta-aumento {
+          background-color: #FFF3E0;
+          color: #E65100;
+          padding: 1px 3px;
+          border-radius: 3px;
+          font-size: 9px;
+          margin-left: 3px;
+          font-weight: bold;
+        }
+  
+        .estado-col {
+          width: 110px;
+          
+          .estado-info {
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+            
+            .estado-propiedad {
+              font-size: x-small;
+              font-weight: 500;
+              padding: 0px 0px;
+              border-radius: 3px;
+              display: inline-block;
+              width: fit-content;
+              white-space: nowrap;
+            }
+            
+            .administra {
+              font-size: 9px;
+              color: #666;
+            }
+          }
+        }
+  
+        .inquilino-col {
+          width: 130px;
+          
+          .inquilino-info {
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+            
+            .nombre-inquilino {
+              font-weight: 500;
+              white-space: nowrap;
+              overflow: hidden;
+              text-overflow: ellipsis;
+            }
+            
+            .btn-contrato {
+              padding: 2px 4px;
+              font-size: 9px;
+              background-color: #e8f5e9;
+              color: #2e7d32;
+              border: none;
+              border-radius: 3px;
+              cursor: pointer;
+              width: fit-content;
+            }
+          }
+        }
+  
+        .metodo-col {
+          width: 120px;
+          
+          select {
+            width: 100%;
+            padding: 4px;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+            font-size: 11px;
+          }
+        }
+  
+        .cobro-col {
+          width: 140px;
+          
+          .cobro-info {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            
+            .monto-cobrado input,
+            .fecha-cobro input {
+              width: 100%;
+              padding: 4px;
+              border: 1px solid #ddd;
+              border-radius: 3px;
+              font-size: 11px;
+            }
+            
+            .cobro-anterior {
+              font-size: 9px;
+              color: #666;
+            }
+          }
+        }
+  
+        .acciones-col {
+          width: 150px;
+          
+          .acciones-info {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            
+            .btn-registrar {
+              padding: 4px;
+              background-color: #4CAF50;
+              color: white;
+              border: none;
+              border-radius: 3px;
+              cursor: pointer;
+              font-size: 11px;
+              
+              &:disabled {
+                background-color: #9E9E9E;
+                cursor: not-allowed;
+              }
+            }
+            
+            .btn-aplicar-aumento {
+              padding: 3px 4px;
+              font-size: 9px;
+              background-color: #FFE082;
+              color: #E65100;
+              border: none;
+              border-radius: 3px;
+              cursor: pointer;
+              
+              &:hover {
+                background-color: #FFD54F;
+              }
+            }
+            
+            .input-notas {
+              width: 100%;
+              padding: 4px;
+              border: 1px solid #ddd;
+              border-radius: 3px;
+              font-size: 10px;
+            }
+            
+            .cobro-anterior {
+              font-size: 9px;
+              
+              span {
+                font-weight: bold;
+                color: #d32f2f;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  /* ==============================================
+     BREAKPOINT TABLET (768px)
+     ============================================== */
+  @media (min-width: 768px) {
+    .ingresos-cobros-container {
+      padding: 12px;
+  
+      .controles-superiores {
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 16px;
+        padding: 16px;
+  
+        .titulo-seccion {
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+  
+          h2 {
+            font-size: 20px;
+          }
+        }
+  
+        .botones-exportacion {
+          flex: none;
+          width: auto;
+          gap: 12px;
+  
+          .btn-exportar {
+            flex: 0 1 auto;
+            padding: 8px 12px;
+          }
+        }
+  
+        .resumen-totales {
+          gap: 12px;
+  
+          .total-card {
+            min-height: 90px;
+            padding: 12px;
+          }
+        }
+      }
+  
+      .tabla-reorganizada {
+        table {
+          font-size: 15px;
+  
+          th, td {
+            padding: 10px;
+          }
+        }
+      }
+    }
+  }
+  
+  /* ==============================================
+     BREAKPOINT ESCRITORIO (1024px)
+     ============================================== */
+  @media (min-width: 1024px) {
+    .ingresos-cobros-container {
+      max-width: 1200px;
+      padding: 16px;
+  
+      .controles-superiores {
+        gap: 20px;
+        padding: 20px;
+  
+        .titulo-seccion h2 {
+          font-size: 22px;
+        }
+  
+        .botones-exportacion .btn-exportar {
+          font-size: 15px;
+          padding: 10px 16px;
+        }
+  
+        .resumen-totales {
+          gap: 16px;
+  
+          .total-card {
+            min-height: 100px;
+            padding: 14px;
+  
+            span {
+              font-size: 13px;
+            }
+  
+            strong {
+              font-size: 18px;
+            }
+          }
+        }
+      }
+  
+      .tabla-reorganizada {
+        table {
+          font-size: 16px;
+  
+          th, td {
+            padding: 12px;
+          }
+        }
+      }
+    }
+  }

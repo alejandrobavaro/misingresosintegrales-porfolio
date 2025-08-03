@@ -1,0 +1,965 @@
+{
+  "metadata": {
+    "version": "3.0",
+    "last_updated": "2023-11-15",
+    "author": "Equipo de Desarrollo",
+    "descripcion": "Sistema integral de gestión de propiedades en alquiler con seguimiento financiero detallado"
+  },
+  "configuracion": {
+    "moneda": "ARS",
+    "simbolo_moneda": "$",
+    "decimales": 2,
+    "formato_fecha": "DD/MM/YYYY",
+    "mes_actual": "2023-11",
+    "mes_anterior": "2023-10"
+  },
+  "propietarios": [
+    {"id": 1, "nombre": "Martín López"},
+    {"id": 2, "nombre": "Sofía Rodríguez"},
+    {"id": 3, "nombre": "Carlos Fernández"},
+    {"id": 4, "nombre": "Laura García"},
+    {"id": 5, "nombre": "Diego Martínez"}
+  ],
+  "propiedades": [
+    {
+      "id": 1,
+      "nombre": "Dpto - Centro - 3A",
+      "descripcion": "Departamento céntrico de 2 ambientes, totalmente amueblado",
+      "propietario_id": 1,
+      "monto_contrato": 85000,
+      "imagen_principal": "/img/propiedades/dpto-centro-3a-01.jpg",
+      "imagenes_adicionales": [
+        "/img/propiedades/dpto-centro-3a-02.jpg",
+        "/img/propiedades/dpto-centro-3a-03.jpg"
+      ],
+      "estado_propiedad_id": 1,
+      "datos_alquiler": {
+        "administra_renta_id": 1,
+        "fecha_inicio_contrato": "2023-01-15",
+        "fecha_fin_contrato": "2024-01-15",
+        "tipo_alquiler": "por mes",
+        "alquilado_a": "Juan Pérez",
+        "contrato_url": "/contratos/contrato-dpto-centro-3a.pdf",
+        "aumentos_programados": [
+          {
+            "fecha_aplicacion": "2023-07-15",
+            "porcentaje": 15,
+            "aplicado": true,
+            "monto_anterior": 75000,
+            "nuevo_monto": 85000
+          }
+        ],
+        "notificacion_vencimiento": {
+          "dias_aviso": 60,
+          "notificado": true
+        }
+      },
+      "cobros": {
+        "2023-10": {
+          "estado_cobro_id": 1,
+          "metodo_cobro_id": 1,
+          "monto_cobrado": 85000,
+          "fecha_cobro": "05/10/2023",
+          "notas": "Pago en efectivo"
+        },
+        "2023-11": {
+          "estado_cobro_id": 1,
+          "metodo_cobro_id": 10,
+          "monto_cobrado": 85000,
+          "fecha_cobro": "03/11/2023",
+          "notas": "Mercado Pago"
+        }
+      }
+    },
+    {
+      "id": 2,
+      "nombre": "Casa - Barrio Norte",
+      "descripcion": "Casa de 3 dormitorios con jardín y cochera",
+      "propietario_id": 2,
+      "monto_contrato": 150000,
+      "imagen_principal": "/img/propiedades/casa-barrio-norte-01.jpg",
+      "imagenes_adicionales": [
+        "/img/propiedades/casa-barrio-norte-02.jpg",
+        "/img/propiedades/casa-barrio-norte-03.jpg"
+      ],
+      "estado_propiedad_id": 1,
+      "datos_alquiler": {
+        "administra_renta_id": 2,
+        "fecha_inicio_contrato": "2023-03-01",
+        "fecha_fin_contrato": "2024-03-01",
+        "tipo_alquiler": "por mes",
+        "alquilado_a": "Familia Holan",
+        "contrato_url": "/contratos/contrato-casa-barrio-norte.pdf",
+        "aumentos_programados": [
+          {
+            "fecha_aplicacion": "2023-09-01",
+            "porcentaje": 20,
+            "aplicado": true,
+            "monto_anterior": 125000,
+            "nuevo_monto": 150000
+          }
+        ],
+        "notificacion_vencimiento": {
+          "dias_aviso": 90,
+          "notificado": false
+        }
+      },
+      "cobros": {
+        "2023-10": {
+          "estado_cobro_id": 1,
+          "metodo_cobro_id": 6,
+          "monto_cobrado": 150000,
+          "fecha_cobro": "01/10/2023",
+          "notas": "Transferencia bancaria"
+        },
+        "2023-11": {
+          "estado_cobro_id": 2,
+          "metodo_cobro_id": null,
+          "monto_cobrado": 0,
+          "fecha_cobro": "",
+          "notas": ""
+        }
+      }
+    },
+    {
+      "id": 3,
+      "nombre": "Local Comercial - Av. Principal",
+      "descripcion": "Local en planta baja, 50m2, ideal para negocio",
+      "propietario_id": 3,
+      "monto_contrato": 120000,
+      "imagen_principal": "/img/propiedades/local-av-principal-01.jpg",
+      "estado_propiedad_id": 1,
+      "datos_alquiler": {
+        "administra_renta_id": 3,
+        "fecha_inicio_contrato": "2023-02-10",
+        "fecha_fin_contrato": "2024-02-10",
+        "tipo_alquiler": "por mes",
+        "alquilado_a": "Tienda de Ropa S.A.",
+        "contrato_url": "/contratos/contrato-local-av-principal.pdf",
+        "aumentos_programados": [
+          {
+            "fecha_aplicacion": "2023-08-10",
+            "porcentaje": 15,
+            "aplicado": true,
+            "monto_anterior": 105000,
+            "nuevo_monto": 120000
+          }
+        ],
+        "notificacion_vencimiento": {
+          "dias_aviso": 60,
+          "notificado": false
+        }
+      },
+      "cobros": {
+        "2023-10": {
+          "estado_cobro_id": 1,
+          "metodo_cobro_id": 3,
+          "monto_cobrado": 120000,
+          "fecha_cobro": "10/10/2023",
+          "notas": "Depósito bancario"
+        },
+        "2023-11": {
+          "estado_cobro_id": 1,
+          "metodo_cobro_id": 11,
+          "monto_cobrado": 120000,
+          "fecha_cobro": "05/11/2023",
+          "notas": "Mercado Pago"
+        }
+      }
+    },
+    {
+      "id": 4,
+      "nombre": "Dpto - Torre Jardín - 12B",
+      "descripcion": "Departamento en torre premium, 3 ambientes, vista panorámica",
+      "propietario_id": 4,
+      "monto_contrato": 180000,
+      "imagen_principal": "/img/propiedades/dpto-torre-jardin-12b-01.jpg",
+      "imagenes_adicionales": [
+        "/img/propiedades/dpto-torre-jardin-12b-02.jpg"
+      ],
+      "estado_propiedad_id": 1,
+      "datos_alquiler": {
+        "administra_renta_id": 1,
+        "fecha_inicio_contrato": "2023-04-15",
+        "fecha_fin_contrato": "2024-04-15",
+        "tipo_alquiler": "por mes",
+        "alquilado_a": "Ejecutivo Corporativo",
+        "contrato_url": "/contratos/contrato-dpto-torre-jardin.pdf",
+        "aumentos_programados": [
+          {
+            "fecha_aplicacion": "2023-10-15",
+            "porcentaje": 12,
+            "aplicado": true,
+            "monto_anterior": 160000,
+            "nuevo_monto": 180000
+          }
+        ],
+        "notificacion_vencimiento": {
+          "dias_aviso": 60,
+          "notificado": true
+        }
+      },
+      "cobros": {
+        "2023-10": {
+          "estado_cobro_id": 1,
+          "metodo_cobro_id": 8,
+          "monto_cobrado": 180000,
+          "fecha_cobro": "12/10/2023",
+          "notas": "Transferencia"
+        },
+        "2023-11": {
+          "estado_cobro_id": 2,
+          "metodo_cobro_id": null,
+          "monto_cobrado": 0,
+          "fecha_cobro": "",
+          "notas": ""
+        }
+      }
+    },
+    {
+      "id": 5,
+      "nombre": "Oficina - Centro Empresarial",
+      "descripcion": "Oficina de 80m2 en edificio corporativo",
+      "propietario_id": 5,
+      "monto_contrato": 200000,
+      "imagen_principal": "/img/propiedades/oficina-centro-empresarial-01.jpg",
+      "estado_propiedad_id": 1,
+      "datos_alquiler": {
+        "administra_renta_id": 4,
+        "fecha_inicio_contrato": "2023-05-01",
+        "fecha_fin_contrato": "2024-05-01",
+        "tipo_alquiler": "por mes",
+        "alquilado_a": "Consultora Tech Solutions",
+        "contrato_url": "/contratos/contrato-oficina-centro-empresarial.pdf",
+        "aumentos_programados": [
+          {
+            "fecha_aplicacion": "2023-11-01",
+            "porcentaje": 10,
+            "aplicado": false
+          }
+        ],
+        "notificacion_vencimiento": {
+          "dias_aviso": 90,
+          "notificado": false
+        }
+      },
+      "cobros": {
+        "2023-10": {
+          "estado_cobro_id": 1,
+          "metodo_cobro_id": 22,
+          "monto_cobrado": 200000,
+          "fecha_cobro": "03/10/2023",
+          "notas": "Transferencia bancaria"
+        },
+        "2023-11": {
+          "estado_cobro_id": 2,
+          "metodo_cobro_id": null,
+          "monto_cobrado": 0,
+          "fecha_cobro": "",
+          "notas": ""
+        }
+      }
+    },
+    {
+      "id": 6,
+      "nombre": "Cochera - Edificio Plaza",
+      "descripcion": "Cochera techada en edificio céntrico",
+      "propietario_id": 1,
+      "monto_contrato": 25000,
+      "imagen_principal": "/img/propiedades/cochera-edificio-plaza-01.jpg",
+      "estado_propiedad_id": 1,
+      "datos_alquiler": {
+        "administra_renta_id": 2,
+        "fecha_inicio_contrato": "2023-06-01",
+        "fecha_fin_contrato": "2024-06-01",
+        "tipo_alquiler": "por mes",
+        "alquilado_a": "Vecino del edificio",
+        "contrato_url": "/contratos/contrato-cochera-edificio-plaza.pdf",
+        "aumentos_programados": [],
+        "notificacion_vencimiento": {
+          "dias_aviso": 30,
+          "notificado": false
+        }
+      },
+      "cobros": {
+        "2023-10": {
+          "estado_cobro_id": 1,
+          "metodo_cobro_id": 1,
+          "monto_cobrado": 25000,
+          "fecha_cobro": "05/10/2023",
+          "notas": "Efectivo"
+        },
+        "2023-11": {
+          "estado_cobro_id": 2,
+          "metodo_cobro_id": null,
+          "monto_cobrado": 0,
+          "fecha_cobro": "",
+          "notas": ""
+        }
+      }
+    },
+    {
+      "id": 7,
+      "nombre": "Dpto - Residencial Park - 5C",
+      "descripcion": "Departamento de lujo, 110m2, amenities",
+      "propietario_id": 2,
+      "monto_contrato": 250000,
+      "imagen_principal": "/img/propiedades/dpto-residencial-park-5c-01.jpg",
+      "imagenes_adicionales": [
+        "/img/propiedades/dpto-residencial-park-5c-02.jpg",
+        "/img/propiedades/dpto-residencial-park-5c-03.jpg"
+      ],
+      "estado_propiedad_id": 3,
+      "datos_alquiler": {
+        "administra_renta_id": 3,
+        "fecha_inicio_contrato": "2022-12-01",
+        "fecha_fin_contrato": "2023-12-01",
+        "tipo_alquiler": "por mes",
+        "alquilado_a": "Ejecutivo Extranjero",
+        "contrato_url": "/contratos/contrato-dpto-residencial-park.pdf",
+        "aumentos_programados": [
+          {
+            "fecha_aplicacion": "2023-06-01",
+            "porcentaje": 15,
+            "aplicado": true,
+            "monto_anterior": 220000,
+            "nuevo_monto": 250000
+          }
+        ],
+        "notificacion_vencimiento": {
+          "dias_aviso": 60,
+          "notificado": true
+        }
+      },
+      "cobros": {
+        "2023-10": {
+          "estado_cobro_id": 1,
+          "metodo_cobro_id": 7,
+          "monto_cobrado": 250000,
+          "fecha_cobro": "01/10/2023",
+          "notas": "Transferencia"
+        },
+        "2023-11": {
+          "estado_cobro_id": 1,
+          "metodo_cobro_id": 7,
+          "monto_cobrado": 250000,
+          "fecha_cobro": "02/11/2023",
+          "notas": "Transferencia"
+        }
+      }
+    },
+    {
+      "id": 8,
+      "nombre": "Casa - Barrio Cerrado",
+      "descripcion": "Casa en country, 4 dormitorios, pileta",
+      "propietario_id": 3,
+      "monto_contrato": 300000,
+      "imagen_principal": "/img/propiedades/casa-barrio-cerrado-01.jpg",
+      "estado_propiedad_id": 2,
+      "datos_alquiler": {
+        "administra_renta_id": 4,
+        "fecha_inicio_contrato": "",
+        "fecha_fin_contrato": "",
+        "tipo_alquiler": "No se Alquila",
+        "alquilado_a": "Nadie",
+        "contrato_url": "",
+        "aumentos_programados": [],
+        "notificacion_vencimiento": {
+          "dias_aviso": 0,
+          "notificado": false
+        }
+      },
+      "cobros": {
+        "2023-10": {
+          "estado_cobro_id": 3,
+          "metodo_cobro_id": 25,
+          "monto_cobrado": 0,
+          "fecha_cobro": "",
+          "notas": ""
+        },
+        "2023-11": {
+          "estado_cobro_id": 3,
+          "metodo_cobro_id": 25,
+          "monto_cobrado": 0,
+          "fecha_cobro": "",
+          "notas": ""
+        }
+      }
+    },
+    {
+      "id": 9,
+      "nombre": "Local - Galería Comercial",
+      "descripcion": "Local en galería céntrica, 30m2",
+      "propietario_id": 4,
+      "monto_contrato": 70000,
+      "imagen_principal": "/img/propiedades/local-galeria-comercial-01.jpg",
+      "estado_propiedad_id": 1,
+      "datos_alquiler": {
+        "administra_renta_id": 1,
+        "fecha_inicio_contrato": "2023-07-01",
+        "fecha_fin_contrato": "2024-07-01",
+        "tipo_alquiler": "por mes",
+        "alquilado_a": "Cafetería Dulce Tentación",
+        "contrato_url": "/contratos/contrato-local-galeria-comercial.pdf",
+        "aumentos_programados": [
+          {
+            "fecha_aplicacion": "2024-01-01",
+            "porcentaje": 15,
+            "aplicado": false
+          }
+        ],
+        "notificacion_vencimiento": {
+          "dias_aviso": 60,
+          "notificado": false
+        }
+      },
+      "cobros": {
+        "2023-10": {
+          "estado_cobro_id": 1,
+          "metodo_cobro_id": 12,
+          "monto_cobrado": 70000,
+          "fecha_cobro": "05/10/2023",
+          "notas": "Mercado Pago"
+        },
+        "2023-11": {
+          "estado_cobro_id": 1,
+          "metodo_cobro_id": 12,
+          "monto_cobrado": 70000,
+          "fecha_cobro": "05/11/2023",
+          "notas": "Mercado Pago"
+        }
+      }
+    },
+    {
+      "id": 10,
+      "nombre": "Dpto - Vista al Río - 8D",
+      "descripcion": "Departamento con vista al río, 2 ambientes",
+      "propietario_id": 5,
+      "monto_contrato": 110000,
+      "imagen_principal": "/img/propiedades/dpto-vista-rio-8d-01.jpg",
+      "estado_propiedad_id": 1,
+      "datos_alquiler": {
+        "administra_renta_id": 2,
+        "fecha_inicio_contrato": "2023-08-15",
+        "fecha_fin_contrato": "2024-08-15",
+        "tipo_alquiler": "por mes",
+        "alquilado_a": "Profesional Universitario",
+        "contrato_url": "/contratos/contrato-dpto-vista-rio.pdf",
+        "aumentos_programados": [
+          {
+            "fecha_aplicacion": "2024-02-15",
+            "porcentaje": 12,
+            "aplicado": false
+          }
+        ],
+        "notificacion_vencimiento": {
+          "dias_aviso": 60,
+          "notificado": false
+        }
+      },
+      "cobros": {
+        "2023-10": {
+          "estado_cobro_id": 1,
+          "metodo_cobro_id": 4,
+          "monto_cobrado": 110000,
+          "fecha_cobro": "10/10/2023",
+          "notas": "Depósito bancario"
+        },
+        "2023-11": {
+          "estado_cobro_id": 2,
+          "metodo_cobro_id": null,
+          "monto_cobrado": 0,
+          "fecha_cobro": "",
+          "notas": ""
+        }
+      }
+    },{
+      "id": 11,
+      "nombre": "Penthouse - Torre Libertador",
+      "descripcion": "Penthouse de lujo 250m2 con terraza y vista panorámica",
+      "propietario_id": 6,
+      "monto_contrato": 850000,
+      "imagen_principal": "/img/propiedades/penthouse-torre-libertador-01.jpg",
+      "imagenes_adicionales": [
+        "/img/propiedades/penthouse-torre-libertador-02.jpg",
+        "/img/propiedades/penthouse-torre-libertador-03.jpg"
+      ],
+      "estado_propiedad_id": 1,
+      "datos_alquiler": {
+        "administra_renta_id": 1,
+        "fecha_inicio_contrato": "2023-09-01",
+        "fecha_fin_contrato": "2024-09-01",
+        "tipo_alquiler": "por mes",
+        "alquilado_a": "Ejecutivo Multinacional",
+        "contrato_url": "/contratos/contrato-penthouse-torre-libertador.pdf",
+        "aumentos_programados": [
+          {
+            "fecha_aplicacion": "2024-03-01",
+            "porcentaje": 15,
+            "aplicado": false
+          }
+        ],
+        "notificacion_vencimiento": {
+          "dias_aviso": 90,
+          "notificado": false
+        }
+      },
+      "cobros": {
+        "2023-11": {
+          "estado_cobro_id": 1,
+          "metodo_cobro_id": 2,
+          "monto_cobrado": 850000,
+          "fecha_cobro": "01/11/2023",
+          "notas": "Transferencia bancaria"
+        },
+        "2023-12": {
+          "estado_cobro_id": 2,
+          "metodo_cobro_id": null,
+          "monto_cobrado": 0,
+          "fecha_cobro": "",
+          "notas": ""
+        }
+      }
+    },
+    {
+      "id": 12,
+      "nombre": "Mansión - Barrio Privado Las Lomas",
+      "descripcion": "Mansión de 600m2 con parque, piscina y quincho",
+      "propietario_id": 7,
+      "monto_contrato": 1200000,
+      "imagen_principal": "/img/propiedades/mansion-las-lomas-01.jpg",
+      "imagenes_adicionales": [
+        "/img/propiedades/mansion-las-lomas-02.jpg",
+        "/img/propiedades/mansion-las-lomas-03.jpg"
+      ],
+      "estado_propiedad_id": 1,
+      "datos_alquiler": {
+        "administra_renta_id": 2,
+        "fecha_inicio_contrato": "2023-10-15",
+        "fecha_fin_contrato": "2024-10-15",
+        "tipo_alquiler": "por mes",
+        "alquilado_a": "Familia Diplomática",
+        "contrato_url": "/contratos/contrato-mansion-las-lomas.pdf",
+        "aumentos_programados": [],
+        "notificacion_vencimiento": {
+          "dias_aviso": 120,
+          "notificado": false
+        }
+      },
+      "cobros": {
+        "2023-11": {
+          "estado_cobro_id": 1,
+          "metodo_cobro_id": 2,
+          "monto_cobrado": 1200000,
+          "fecha_cobro": "10/11/2023",
+          "notas": "Transferencia internacional"
+        },
+        "2023-12": {
+          "estado_cobro_id": 2,
+          "metodo_cobro_id": null,
+          "monto_cobrado": 0,
+          "fecha_cobro": "",
+          "notas": ""
+        }
+      }
+    },
+    {
+      "id": 13,
+      "nombre": "Edificio Corporativo - Microcentro",
+      "descripcion": "Edificio completo de oficinas clase A, 20 pisos",
+      "propietario_id": 6,
+      "monto_contrato": 2500000,
+      "imagen_principal": "/img/propiedades/edificio-corporativo-01.jpg",
+      "estado_propiedad_id": 1,
+      "datos_alquiler": {
+        "administra_renta_id": 3,
+        "fecha_inicio_contrato": "2023-07-01",
+        "fecha_fin_contrato": "2026-07-01",
+        "tipo_alquiler": "por mes",
+        "alquilado_a": "Consultora Internacional",
+        "contrato_url": "/contratos/contrato-edificio-corporativo.pdf",
+        "aumentos_programados": [
+          {
+            "fecha_aplicacion": "2024-07-01",
+            "porcentaje": 10,
+            "aplicado": false
+          },
+          {
+            "fecha_aplicacion": "2025-07-01",
+            "porcentaje": 10,
+            "aplicado": false
+          }
+        ],
+        "notificacion_vencimiento": {
+          "dias_aviso": 180,
+          "notificado": false
+        }
+      },
+      "cobros": {
+        "2023-11": {
+          "estado_cobro_id": 1,
+          "metodo_cobro_id": 2,
+          "monto_cobrado": 2500000,
+          "fecha_cobro": "01/11/2023",
+          "notas": "Transferencia corporativa"
+        },
+        "2023-12": {
+          "estado_cobro_id": 1,
+          "metodo_cobro_id": 2,
+          "monto_cobrado": 2500000,
+          "fecha_cobro": "01/12/2023",
+          "notas": "Transferencia corporativa"
+        }
+      }
+    },
+    {
+      "id": 14,
+      "nombre": "Local - Galería Premium",
+      "descripcion": "Local en galería de lujo, 150m2, ubicación privilegiada",
+      "propietario_id": 7,
+      "monto_contrato": 650000,
+      "imagen_principal": "/img/propiedades/local-galeria-premium-01.jpg",
+      "estado_propiedad_id": 1,
+      "datos_alquiler": {
+        "administra_renta_id": 1,
+        "fecha_inicio_contrato": "2023-08-01",
+        "fecha_fin_contrato": "2024-08-01",
+        "tipo_alquiler": "por mes",
+        "alquilado_a": "Boutique de Diseño",
+        "contrato_url": "/contratos/contrato-local-galeria-premium.pdf",
+        "aumentos_programados": [
+          {
+            "fecha_aplicacion": "2024-02-01",
+            "porcentaje": 12,
+            "aplicado": false
+          }
+        ],
+        "notificacion_vencimiento": {
+          "dias_aviso": 90,
+          "notificado": false
+        }
+      },
+      "cobros": {
+        "2023-11": {
+          "estado_cobro_id": 1,
+          "metodo_cobro_id": 8,
+          "monto_cobrado": 650000,
+          "fecha_cobro": "05/11/2023",
+          "notas": "Mercado Pago"
+        },
+        "2023-12": {
+          "estado_cobro_id": 1,
+          "metodo_cobro_id": 8,
+          "monto_cobrado": 650000,
+          "fecha_cobro": "05/12/2023",
+          "notas": "Mercado Pago"
+        }
+      }
+    },
+    {
+      "id": 15,
+      "nombre": "Departamento - Torre Yacht",
+      "descripcion": "Departamento frente al mar, 180m2, amenities premium",
+      "propietario_id": 6,
+      "monto_contrato": 950000,
+      "imagen_principal": "/img/propiedades/dpto-torre-yacht-01.jpg",
+      "imagenes_adicionales": [
+        "/img/propiedades/dpto-torre-yacht-02.jpg"
+      ],
+      "estado_propiedad_id": 1,
+      "datos_alquiler": {
+        "administra_renta_id": 2,
+        "fecha_inicio_contrato": "2023-06-15",
+        "fecha_fin_contrato": "2024-06-15",
+        "tipo_alquiler": "por mes",
+        "alquilado_a": "Empresario Extranjero",
+        "contrato_url": "/contratos/contrato-dpto-torre-yacht.pdf",
+        "aumentos_programados": [
+          {
+            "fecha_aplicacion": "2023-12-15",
+            "porcentaje": 10,
+            "aplicado": false
+          }
+        ],
+        "notificacion_vencimiento": {
+          "dias_aviso": 90,
+          "notificado": false
+        }
+      },
+      "cobros": {
+        "2023-11": {
+          "estado_cobro_id": 1,
+          "metodo_cobro_id": 9,
+          "monto_cobrado": 950000,
+          "fecha_cobro": "10/11/2023",
+          "notas": "PayPal"
+        },
+        "2023-12": {
+          "estado_cobro_id": 2,
+          "metodo_cobro_id": null,
+          "monto_cobrado": 0,
+          "fecha_cobro": "",
+          "notas": ""
+        }
+      }
+    },
+    {
+      "id": 16,
+      "nombre": "Villa - Country Golf",
+      "descripcion": "Villa de 400m2 en country con campo de golf",
+      "propietario_id": 7,
+      "monto_contrato": 1500000,
+      "imagen_principal": "/img/propiedades/villa-country-golf-01.jpg",
+      "imagenes_adicionales": [
+        "/img/propiedades/villa-country-golf-02.jpg",
+        "/img/propiedades/villa-country-golf-03.jpg"
+      ],
+      "estado_propiedad_id": 1,
+      "datos_alquiler": {
+        "administra_renta_id": 3,
+        "fecha_inicio_contrato": "2023-09-01",
+        "fecha_fin_contrato": "2024-09-01",
+        "tipo_alquiler": "por mes",
+        "alquilado_a": "Ejecutivo Corporativo",
+        "contrato_url": "/contratos/contrato-villa-country-golf.pdf",
+        "aumentos_programados": [],
+        "notificacion_vencimiento": {
+          "dias_aviso": 120,
+          "notificado": false
+        }
+      },
+      "cobros": {
+        "2023-11": {
+          "estado_cobro_id": 1,
+          "metodo_cobro_id": 2,
+          "monto_cobrado": 1500000,
+          "fecha_cobro": "01/11/2023",
+          "notas": "Transferencia bancaria"
+        },
+        "2023-12": {
+          "estado_cobro_id": 1,
+          "metodo_cobro_id": 2,
+          "monto_cobrado": 1500000,
+          "fecha_cobro": "01/12/2023",
+          "notas": "Transferencia bancaria"
+        }
+      }
+    },
+    {
+      "id": 17,
+      "nombre": "Oficina - Piso Completo",
+      "descripcion": "Piso completo en torre corporativa, 800m2",
+      "propietario_id": 6,
+      "monto_contrato": 1800000,
+      "imagen_principal": "/img/propiedades/oficina-piso-completo-01.jpg",
+      "estado_propiedad_id": 1,
+      "datos_alquiler": {
+        "administra_renta_id": 1,
+        "fecha_inicio_contrato": "2023-05-01",
+        "fecha_fin_contrato": "2025-05-01",
+        "tipo_alquiler": "por mes",
+        "alquilado_a": "Empresa Tecnológica",
+        "contrato_url": "/contratos/contrato-oficina-piso-completo.pdf",
+        "aumentos_programados": [
+          {
+            "fecha_aplicacion": "2024-05-01",
+            "porcentaje": 8,
+            "aplicado": false
+          }
+        ],
+        "notificacion_vencimiento": {
+          "dias_aviso": 180,
+          "notificado": false
+        }
+      },
+      "cobros": {
+        "2023-11": {
+          "estado_cobro_id": 1,
+          "metodo_cobro_id": 2,
+          "monto_cobrado": 1800000,
+          "fecha_cobro": "01/11/2023",
+          "notas": "Transferencia corporativa"
+        },
+        "2023-12": {
+          "estado_cobro_id": 1,
+          "metodo_cobro_id": 2,
+          "monto_cobrado": 1800000,
+          "fecha_cobro": "01/12/2023",
+          "notas": "Transferencia corporativa"
+        }
+      }
+    },
+    {
+      "id": 18,
+      "nombre": "Departamento - Sky Tower",
+      "descripcion": "Departamento en torre exclusiva, 220m2, vista ciudad",
+      "propietario_id": 7,
+      "monto_contrato": 750000,
+      "imagen_principal": "/img/propiedades/dpto-sky-tower-01.jpg",
+      "imagenes_adicionales": [
+        "/img/propiedades/dpto-sky-tower-02.jpg"
+      ],
+      "estado_propiedad_id": 1,
+      "datos_alquiler": {
+        "administra_renta_id": 2,
+        "fecha_inicio_contrato": "2023-08-01",
+        "fecha_fin_contrato": "2024-08-01",
+        "tipo_alquiler": "por mes",
+        "alquilado_a": "Ejecutivo Financiero",
+        "contrato_url": "/contratos/contrato-dpto-sky-tower.pdf",
+        "aumentos_programados": [
+          {
+            "fecha_aplicacion": "2024-02-01",
+            "porcentaje": 10,
+            "aplicado": false
+          }
+        ],
+        "notificacion_vencimiento": {
+          "dias_aviso": 90,
+          "notificado": false
+        }
+      },
+      "cobros": {
+        "2023-11": {
+          "estado_cobro_id": 1,
+          "metodo_cobro_id": 2,
+          "monto_cobrado": 750000,
+          "fecha_cobro": "05/11/2023",
+          "notas": "Transferencia bancaria"
+        },
+        "2023-12": {
+          "estado_cobro_id": 2,
+          "metodo_cobro_id": null,
+          "monto_cobrado": 0,
+          "fecha_cobro": "",
+          "notas": ""
+        }
+      }
+    },
+    {
+      "id": 19,
+      "nombre": "Casa - Barrio Privado Los Lagos",
+      "descripcion": "Casa de 350m2 con jardín y piscina en barrio cerrado",
+      "propietario_id": 6,
+      "monto_contrato": 950000,
+      "imagen_principal": "/img/propiedades/casa-los-lagos-01.jpg",
+      "imagenes_adicionales": [
+        "/img/propiedades/casa-los-lagos-02.jpg"
+      ],
+      "estado_propiedad_id": 1,
+      "datos_alquiler": {
+        "administra_renta_id": 3,
+        "fecha_inicio_contrato": "2023-07-15",
+        "fecha_fin_contrato": "2024-07-15",
+        "tipo_alquiler": "por mes",
+        "alquilado_a": "Familia Extranjera",
+        "contrato_url": "/contratos/contrato-casa-los-lagos.pdf",
+        "aumentos_programados": [],
+        "notificacion_vencimiento": {
+          "dias_aviso": 120,
+          "notificado": false
+        }
+      },
+      "cobros": {
+        "2023-11": {
+          "estado_cobro_id": 1,
+          "metodo_cobro_id": 9,
+          "monto_cobrado": 950000,
+          "fecha_cobro": "15/11/2023",
+          "notas": "PayPal"
+        },
+        "2023-12": {
+          "estado_cobro_id": 2,
+          "metodo_cobro_id": null,
+          "monto_cobrado": 0,
+          "fecha_cobro": "",
+          "notas": ""
+        }
+      }
+    },
+    {
+      "id": 20,
+      "nombre": "Local - Centro Comercial Premium",
+      "descripcion": "Local en planta baja de centro comercial exclusivo, 200m2",
+      "propietario_id": 7,
+      "monto_contrato": 850000,
+      "imagen_principal": "/img/propiedades/local-cc-premium-01.jpg",
+      "estado_propiedad_id": 1,
+      "datos_alquiler": {
+        "administra_renta_id": 1,
+        "fecha_inicio_contrato": "2023-06-01",
+        "fecha_fin_contrato": "2025-06-01",
+        "tipo_alquiler": "por mes",
+        "alquilado_a": "Cadena Internacional",
+        "contrato_url": "/contratos/contrato-local-cc-premium.pdf",
+        "aumentos_programados": [
+          {
+            "fecha_aplicacion": "2024-06-01",
+            "porcentaje": 8,
+            "aplicado": false
+          }
+        ],
+        "notificacion_vencimiento": {
+          "dias_aviso": 180,
+          "notificado": false
+        }
+      },
+      "cobros": {
+        "2023-11": {
+          "estado_cobro_id": 1,
+          "metodo_cobro_id": 2,
+          "monto_cobrado": 850000,
+          "fecha_cobro": "01/11/2023",
+          "notas": "Transferencia corporativa"
+        },
+        "2023-12": {
+          "estado_cobro_id": 1,
+          "metodo_cobro_id": 2,
+          "monto_cobrado": 850000,
+          "fecha_cobro": "01/12/2023",
+          "notas": "Transferencia corporativa"
+        }
+      }
+    }
+  
+  ],
+  "estados_propiedad": [
+    {"id": 1, "nombre": "ALQUILADO", "color": "#4CAF50"},
+    {"id": 2, "nombre": "NO ALQUILADO", "color": "#F44336"},
+    {"id": 3, "nombre": "A LA VENTA", "color": "#FFC107"},
+    {"id": 4, "nombre": "NO SE COMPERCIALIZA", "color": "#9E9E9E"}
+  ],
+  "administra_renta": [
+    {"id": 1, "nombre": "Inmobiliaria Urbana"},
+    {"id": 2, "nombre": "Inmobiliaria Premium"},
+    {"id": 3, "nombre": "Inmobiliaria Capital"},
+    {"id": 4, "nombre": "Administración Directa"}
+  ],
+  "tipos_alquiler": [
+    {"id": 1, "nombre": "Por día"},
+    {"id": 2, "nombre": "Por semana"},
+    {"id": 3, "nombre": "Por mes"},
+    {"id": 4, "nombre": "Por 6 meses"},
+    {"id": 5, "nombre": "Por 12 meses"},
+    {"id": 6, "nombre": "No se Alquila"}
+  ],
+  "estados_cobro": [
+    {"id": 1, "nombre": "COBRADO", "color": "#4CAF50"},
+    {"id": 2, "nombre": "PENDIENTE", "color": "#F44336"},
+    {"id": 3, "nombre": "NO APLICA", "color": "#9E9E9E"}
+  ],
+  "metodos_cobro": [
+    {"id": 1, "nombre": "Efectivo"},
+    {"id": 2, "nombre": "Transferencia - Banco Nación"},
+    {"id": 3, "nombre": "Transferencia - Banco Santander"},
+    {"id": 4, "nombre": "Transferencia - Banco Galicia"},
+    {"id": 5, "nombre": "Depósito - Banco Nación"},
+    {"id": 6, "nombre": "Depósito - Banco Santander"},
+    {"id": 7, "nombre": "Depósito - Banco Galicia"},
+    {"id": 8, "nombre": "Mercado Pago"},
+    {"id": 9, "nombre": "PayPal"},
+    {"id": 10, "nombre": "Cheque"},
+    {"id": 11, "nombre": "Débito Automático"},
+    {"id": 25, "nombre": "No se Cobra"}
+  ]
+}

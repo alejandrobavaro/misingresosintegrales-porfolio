@@ -1,0 +1,50 @@
+// --------------------------------------------
+// ESTILOS PARA EL CONTENEDOR PRINCIPAL
+// --------------------------------------------
+// Clase que aplica al div contenedor
+.telefonoWhatsappMainContent {
+  // Posicionamiento fijo en la pantalla
+  position: fixed;
+  
+  // Ubicación: 1px desde el fondo (podría aumentarse para mejor visibilidad)
+  bottom: 1px;
+  
+  // Ubicación: 1px desde la derecha (podría aumentarse para mejor visibilidad)
+  right: 1px;
+  
+  // Índice z alto para asegurar que esté por encima de otros elementos
+  z-index: 1000;
+}
+
+// --------------------------------------------
+// ESTILOS PARA LA IMAGEN DEL LOGO
+// --------------------------------------------
+// Clase que aplica a la imagen de WhatsApp
+.logoWhatsappMainContent {
+  // Ancho inicial en desktop (80px)
+  width: 80px;
+  
+  // Alto automático para mantener proporciones
+  height: auto;
+  
+  // Transición suave para efectos hover (dura 0.3 segundos)
+  transition: transform 0.3s ease;
+
+  // --------------------------------------------
+  // EFECTO HOVER (CUANDO EL USUARIO PASA EL MOUSE)
+  // --------------------------------------------
+  // Al pasar el mouse sobre la imagen:
+  &:hover {
+    // Escala la imagen al 110% de su tamaño original
+    transform: scale(1.1);
+  }
+
+  // --------------------------------------------
+  // MEDIA QUERY PARA DISPOSITIVOS MÓVILES (RESPONSIVE)
+  // --------------------------------------------
+  // Cuando el ancho de pantalla es menor a 768px:
+  @media (max-width: 768px) {
+    // Reduce el tamaño del ícono a 60px para móviles
+    width: 60px;
+  }
+}

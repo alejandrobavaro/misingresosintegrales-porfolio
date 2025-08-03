@@ -1,0 +1,52 @@
+//==================== GENERAL ====================//
+@import "./_01-General/App";
+@import "./_01-General/SweetAlert";
+@import "./_01-General/Toastify";
+
+//==================== HEADER ====================//
+@import "./_03-Componentes/HeaderNotificaciones";
+@import "./_03-Componentes/HeaderUnificado";
+@import "./_03-Componentes/HeaderDolarApi";
+
+//==================== HOME - MAIN ====================//
+@import "./_03-Componentes/MainContent";
+@import "./_03-Componentes/MainContentNovedades";
+
+//==================== FOOTER ====================//
+@import "./_03-Componentes/Footer";
+@import "./_03-Componentes/FooterGondraWorldDev";
+
+//==================== AYUDA ====================//
+
+//==================== CONTACTO ====================//
+@import "./_03-Componentes/ContactoLogoRedes";
+@import "./_03-Componentes/ContactoFormularioSlider";
+
+//==================== SESIÓN ====================//
+@import "./_03-Componentes/SesionLoginRegister";
+
+//==================== DATA - INFO CUENTAS ====================//
+@import "./_03-Componentes/DataInfoCuentas";
+
+//==================== APP INGRESOS/EGRESOS ====================//
+@import "./_03-Componentes/NewAppPadreIngresoEgreso";
+@import "./_03-Componentes/...........";
+@import "./_03-Componentes/............";
+
+
+
+@import "./_03-Componentes/NewEstadoCarga";
+
+
+
+//==================== GESTOR INGRESO EGRESO ====================//
+@import "./_03-Componentes/GestorAppIngresoEgresoProviderContexto";
+@import "./_03-Componentes/GestorEgresos";
+@import "./_03-Componentes/GestorIngresos";
+@import "./_03-Componentes/GestorAppIngresos";
+@import "./_03-Componentes/GestorIngresoEgresoTabla";
+@import "./_03-Componentes/GestorPadreIngresosEgresos";
+
+//==================== OTROS ====================//
+@import "./_03-Componentes/GestionFinanzas";
+@import "./_03-Componentes/GestionFinanzasTutorial";

@@ -1,0 +1,130 @@
+/* CONTENEDOR PRINCIPAL DEL FOOTER */
+.footer-container {
+  background-color: #ffffff; /* Fondo blanco */
+  padding: 30px 0; /* Espaciado vertical */
+  border-top: 1px solid #e0e0e0; /* Borde superior sutil */
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05); /* Sombra hacia arriba */
+}
+
+/* CONTENIDO DEL FOOTER */
+.footer-content {
+  max-width: 1200px; /* Ancho máximo */
+  margin: 0 auto; /* Centrado horizontal */
+  padding: 0 0px; /* Sin padding horizontal */
+}
+
+/* DISEÑO DE COLUMNAS */
+.footer-columns {
+  display: flex; /* Layout flexible */
+  justify-content: space-between; /* Espacio entre columnas */
+  align-items: center; /* Centrado vertical */
+  flex-wrap: wrap; /* Permite envolver en pantallas pequeñas */
+  gap: 20px; /* Espacio entre columnas */
+  margin-bottom: 20px; /* Margen inferior */
+}
+
+/* ESTILOS DE COLUMNA INDIVIDUAL */
+.footer-column {
+  flex: 1; /* Distribución equitativa */
+  min-width: 200px; /* Ancho mínimo */
+  display: flex;
+  justify-content: center; /* Centrado horizontal */
+  align-items: center; /* Centrado vertical */
+}
+
+/* ENLACE DEL LOGO */
+.footer-logo-link {
+  display: inline-block;
+  transition: transform 0.3s ease; /* Transición suave */
+  
+  /* EFECTO HOVER */
+  &:hover {
+    transform: scale(1.05); /* Escalado leve */
+  }
+}
+
+/* IMAGEN DEL LOGO */
+.footer-logo {
+  max-width: 150px; /* Ancho máximo */
+  height: auto; /* Altura automática */
+}
+
+/* CONTENEDOR DE ENLACES SOCIALES */
+.social-links {
+  display: flex;
+  flex-direction: wrap; /* Permite envolver */
+  gap: 50px; /* Espacio entre enlaces */
+}
+
+/* ESTILOS DE ENLACES SOCIALES */
+.social-link {
+  display: flex;
+  align-items: center; /* Centrado vertical */
+  gap: 8px; /* Espacio entre icono y texto */
+  color: #4a6fa5; /* Color azul */
+  text-decoration: none; /* Sin subrayado */
+  font-size: 15px; /* Tamaño de fuente */
+  
+  transition: color 0.3s ease; /* Transición suave */
+  
+  /* EFECTO HOVER */
+  &:hover {
+    color: #3a5a80; /* Color azul más oscuro */
+    text-decoration: underline; /* Subrayado al hover */
+  }
+  
+  /* ESTILOS DE ICONOS */
+  i {
+    font-size: 18px; /* Tamaño de icono */
+  }
+}
+
+/* DIVISOR VISUAL */
+.footer-divider {
+  height: 1px; /* Altura mínima */
+  background-color: #e0e0e0; /* Color de línea */
+  margin: 20px 0; /* Margen vertical */
+}
+
+/* SECCIÓN DE COPYRIGHT */
+.footer-copyright {
+  text-align: center; /* Texto centrado */
+  color: #6c757d; /* Color gris */
+  font-size: 13px; /* Tamaño de fuente pequeño */
+}
+
+/* MEDIA QUERIES PARA RESPONSIVIDAD */
+
+/* TABLETS (hasta 768px) */
+@media (max-width: 768px) {
+  .footer-columns {
+    flex-direction: column; /* Apilado vertical */
+    gap: 30px; /* Más espacio entre elementos */
+  }
+  
+  .footer-column {
+    width: 100%; /* Ancho completo */
+    justify-content: center; /* Centrado horizontal */
+  }
+  
+  .social-links {
+    flex-direction: row; /* Mantiene disposición horizontal */
+    flex-wrap: wrap; /* Permite envolver */
+    justify-content: center; /* Centrado horizontal */
+  }
+}
+
+/* MÓVILES (hasta 480px) */
+@media (max-width: 480px) {
+  .footer-logo {
+    max-width: 120px; /* Reducción de tamaño */
+  }
+  
+  .social-link {
+    font-size: 13px; /* Tamaño de fuente más pequeño */
+    
+    i {
+      font-size: 16px; /* Tamaño de icono reducido */
+    }
+  }
+}

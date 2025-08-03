@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!-- Definición del idioma principal de la página -->
+<html lang="es">
+  <head>
+    <!----------------SEGMENTO SEO------------------->
+    <!-- Metadatos básicos para SEO -->
+    <meta charset="UTF-8" /> <!-- Codificación de caracteres -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- Configuración responsive -->
+    <meta name="description" content="Página web de mis gastos mensuales" /> <!-- Descripción para motores de búsqueda -->
+    <meta
+      name="keywords"
+      content="Pagina web de gastos, gastos personales, impuestos, gastos mensuales"
+    /> <!-- Palabras clave para SEO -->
+
+    <!--------IMAGEN PARA COMPARTIR WEB------------->
+    <!-- Metadatos Open Graph para cuando se comparte en redes sociales -->
+    <meta property="og:title" content="Mis Gastos Mensuales Web" /> <!-- Título para compartir -->
+    <meta
+      property="og:description"
+      content="Página web del proyecto Mis Gastos Mensuales."
+    /> <!-- Descripción para compartir -->
+    <meta
+      property="og:image"
+      content="https://misgastosmensuales.netlify.app/img/02-logos/logoheader1-izquierda.png"
+    /> <!-- Imagen para compartir -->
+    <meta property="og:url" content="https://misgastosmensuales.netlify.app/" /> <!-- URL canónica -->
+    <meta property="og:type" content="website" /> <!-- Tipo de contenido -->
+
+    <!-- Título que aparece en la pestaña del navegador -->
+    <title>Home - Mis Gastos Mensuales Web</title>
+
+    <!----LINKS ENLACES RECURSOS EXTERNOS--------->
+    <!-- Favicon - icono que aparece en la pestaña del navegador -->
+    <link
+      rel="shortcut icon"
+      href="/img/01-favicon/logo1.ico"
+      type="image/x-icon"
+    />
+
+    <!-- Importación de fuentes de Google Fonts -->
+    <!-- Primera familia de fuentes con varios estilos -->
+    <link href="https://fonts.googleapis.com/css2?family=Arsenal+SC:ital,wght@0,400;0,700;1,400;1,700&family=Bona+Nova+SC:ital,wght@0,400;0,700;1,400&family=Caveat:wght@400..700&family=Gupter:wght@400;500;700&family=Permanent+Marker&display=swap" rel="stylesheet">
+    <!-- Segunda familia de fuentes (similar a la primera pero incluye Chelsea Market) -->
+    <link href="https://fonts.googleapis.com/css2?family=Arsenal+SC:ital,wght@0,400;0,700;1,400;1,700&family=Bona+Nova+SC:ital,wght@0,400;0,700;1,400&family=Caveat:wght@400..700&family=Chelsea+Market&family=Gupter:wght@400;500;700&family=Permanent+Marker&display=swap" rel="stylesheet">
+  </head>
+
+  <!-- Cuerpo del documento con clase container-fluid de Bootstrap -->
+  <body class="container-fluid">
+    <!-- Contenedor principal donde React montará la aplicación -->
+    <div id="root"></div>
+    <!-- Enlace al archivo JavaScript principal (main.jsx) como módulo ES6 -->
+    <script type="module" src="./src/main.jsx"></script>
+  </body>
+</html>

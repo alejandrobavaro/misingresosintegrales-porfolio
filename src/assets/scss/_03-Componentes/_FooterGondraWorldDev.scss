@@ -1,0 +1,127 @@
+/* ESTILOS PRINCIPALES DEL FOOTER */
+.trademarkGondraFooter {
+  text-align: center; /* Centrado de texto */
+  margin: 0; /* Sin margen */
+  padding: 20px 0; /* Espaciado vertical */
+  background-color: white; /* Fondo blanco */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fuente principal */
+}
+
+/* CONTENEDOR DEL TEXTO DE AUTOR */
+.textoFooterAutor {
+  border-radius: 8px; /* Bordes redondeados */
+  width: 100%; /* Ancho completo */
+  padding: 20px; /* Espaciado interno */
+  background-color: #f8f9fa; /* Fondo gris claro */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Sombra sutil */
+  color: #495057; /* Color de texto */
+  margin-bottom: 20px; /* Margen inferior */
+}
+
+/* GRID DE IMÁGENES PROMOCIONALES */
+.gridPadreProductosGondraFooter1 {
+  display: flex; /* Layout flexible */
+  flex-wrap: wrap; /* Permite que los elementos se envuelvan */
+  gap: 15px; /* Espacio entre elementos */
+  justify-content: center; /* Centrado horizontal */
+  padding: 15px; /* Espaciado interno */
+  border-radius: 8px; /* Bordes redondeados */
+  width: 100%; /* Ancho completo */
+  background-color: white; /* Fondo blanco */
+}
+
+/* TEXTO PRINCIPAL */
+.texto-principal {
+  font-size: 16px; /* Tamaño de fuente */
+  color: #4a6fa5; /* Color azul */
+  margin-bottom: 10px; /* Margen inferior */
+  font-weight: 500; /* Grosor de fuente */
+}
+
+/* TEXTO DEL FOOTER (MARCA) */
+.textoFooterGondraWorld {
+  font-size: 14px; /* Tamaño de fuente */
+  transition: transform 0.2s ease; /* Transición suave */
+  color: #6c757d; /* Color gris */
+
+  /* EFECTO HOVER */
+  &:hover {
+    transform: scale(1.05); /* Escalado leve */
+    color: #4a6fa5; /* Cambio a color azul */
+  }
+}
+
+/* TEXTO SECUNDARIO */
+.texto-secundario {
+  font-size: 14px; /* Tamaño de fuente */
+  color: #6c757d; /* Color gris */
+  margin-left: 10px; /* Margen izquierdo */
+}
+
+/* ESTILOS DE IMÁGENES */
+.imagen-limitada8 {
+  max-width: 120px; /* Ancho máximo */
+  height: auto; /* Altura automática */
+  transition: transform 0.2s ease; /* Transición suave */
+
+  /* EFECTO HOVER */
+  &:hover {
+    transform: scale(1.05); /* Escalado leve */
+  }
+}
+
+/* CLASE PARA CENTRAR OBJETOS */
+.objetoCentrado1 {
+  display: block; /* Mostrar como bloque */
+  margin: 0 auto; /* Centrado horizontal */
+}
+
+/* ESTILOS DE LÍNEAS DIVISORIAS */
+hr {
+  margin: 20px 0; /* Margen vertical */
+  border: none; /* Sin borde */
+  border-top: 1px solid #e0e0e0; /* Línea superior sutil */
+}
+
+/* MEDIA QUERIES PARA RESPONSIVIDAD */
+
+/* TABLETS (hasta 768px) */
+@media (max-width: 768px) {
+  .texto-principal {
+    font-size: 15px; /* Tamaño de fuente reducido */
+  }
+
+  .texto-secundario {
+    font-size: 14px; /* Tamaño de fuente reducido */
+  }
+
+  .imagen-limitada8 {
+    max-width: 100px; /* Ancho máximo reducido */
+  }
+}
+
+/* MÓVILES (hasta 480px) */
+@media (max-width: 480px) {
+  .texto-principal {
+    font-size: 14px; /* Tamaño de fuente más pequeño */
+  }
+
+  .texto-secundario {
+    font-size: 13px; /* Tamaño de fuente más pequeño */
+  }
+
+  .imagen-limitada8 {
+    max-width: 80px; /* Ancho máximo más pequeño */
+  }
+
+  .gridPadreProductosGondraFooter1 {
+    gap: 10px; /* Espacio entre elementos reducido */
+    padding: 10px; /* Espaciado interno reducido */
+    margin-bottom: 20px; /* Margen inferior */
+  }
+
+  .textoFooterAutor {
+    padding: 15px; /* Espaciado interno reducido */
+    margin-top: 0; /* Sin margen superior */
+  }
+}

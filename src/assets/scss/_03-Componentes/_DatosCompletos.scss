@@ -1,0 +1,514 @@
+/* ==============================================
+   ESTILOS BASE - MOBILE FIRST
+   ============================================== */
+
+   .ing-data-container {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 12px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #212529;
+    background-color: rgba(255, 255, 255, 0.95);
+    min-height: 100vh;
+    
+    /* ==============================================
+       ESTILOS DEL HEADER
+       ============================================== */
+    .header {
+      margin-bottom: 16px;
+      
+      /* Contenedor del título y metadatos */
+      .header-content {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        margin-bottom: 12px;
+        
+        /* Sección del título con icono */
+        .title-section {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          
+          .title-icon {
+            font-size: 24px;
+            color: #4361ee;
+          }
+          
+          h1 {
+            font-size: 20px;
+            margin: 0;
+            font-weight: 600;
+          }
+        }
+        
+        /* Información de metadatos */
+        .metadata-info {
+          display: flex;
+          justify-content: space-between;
+          font-size: 12px;
+          color: #6c757d;
+        }
+      }
+      
+      /* Contenedor de los filtros superiores */
+      .filtros-superiores {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        
+        /* Contenedor de la barra de búsqueda */
+        .search-container {
+          position: relative;
+          width: 100%;
+          
+          .search-icon {
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #6c757d;
+          }
+          
+          .barra-busqueda {
+            width: 100%;
+            padding: 10px 12px 10px 36px;
+            border: 1px solid #e9ecef;
+            border-radius: 6px;
+            font-size: 14px;
+            
+            &:focus {
+              outline: none;
+              border-color: #4361ee;
+            }
+          }
+        }
+        
+        /* Contenedor de los filtros y botones */
+        .filters-container {
+          display: flex;
+          gap: 8px;
+          
+          /* Selector del rubro */
+          .selector-rubro {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #e9ecef;
+            border-radius: 6px;
+            font-size: 14px;
+            background-color: white;
+          }
+          
+          /* Botones de filtros y exportar */
+          .btn-filtros, .btn-exportar {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 10px 12px;
+            border: none;
+            border-radius: 6px;
+            font-size: 13px;
+            cursor: pointer;
+            
+            &.btn-filtros {
+              background-color: #e9ecef;
+              
+              &.active {
+                background-color: #4361ee;
+                color: white;
+              }
+            }
+            
+            &.btn-exportar {
+              background-color: #4cc9f0;
+              color: white;
+              
+              &:disabled {
+                background-color: #b3e5fc;
+                cursor: not-allowed;
+              }
+            }
+          }
+        }
+        
+        /* Sección de filtros avanzados (oculta por defecto) */
+        .filtros-avanzados {
+          padding: 12px;
+          background-color: white;
+          border-radius: 6px;
+          border: 1px solid #e9ecef;
+          font-size: 14px;
+        }
+      }
+    }
+    
+    /* ==============================================
+       ESTILOS DE LA INFORMACIÓN DEL RUBRO
+       ============================================== */
+    .info-rubro {
+      margin-bottom: 16px;
+      
+      /* Título del rubro con icono */
+      .rubro-title {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        
+        svg {
+          font-size: 20px;
+          color: #4361ee;
+        }
+        
+        h2 {
+          font-size: 18px;
+          margin: 0;
+          text-transform: capitalize;
+        }
+      }
+      
+      /* Contador de resultados */
+      .resultados-count {
+        font-size: 13px;
+        color: #6c757d;
+        margin: 4px 0 0 0;
+        
+        strong {
+          color: #212529;
+        }
+      }
+    }
+    
+    /* ==============================================
+       ESTILOS DEL CONTENEDOR PRINCIPAL DE DATOS
+       ============================================== */
+    .contenedor-datos {
+      width: 100%;
+      margin-bottom: 24px;
+      
+      /* Grid de tarjetas de datos */
+      .lista-datos {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+      
+      /* Estilos de cada tarjeta de dato individual */
+      .tarjeta-dato {
+        background-color: white;
+        border-radius: 6px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        
+        /* Encabezado de la tarjeta */
+        .tarjeta-header {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 12px;
+          background-color: rgba(67, 97, 238, 0.05);
+          border-bottom: 1px solid #e9ecef;
+          
+          h3 {
+            margin: 0;
+            font-size: 16px;
+          }
+          
+          /* Indicador de color (si existe) */
+          .color-indicador {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            box-shadow: 0 0 0 2px white;
+          }
+        }
+        
+        /* Detalles dentro de la tarjeta */
+        .detalles-dato {
+          padding: 12px;
+          
+          /* Cada campo individual */
+          .campo-dato {
+            margin-bottom: 10px;
+            font-size: 13px;
+            
+            .campo-nombre {
+              color: #6c757d;
+              margin-right: 6px;
+            }
+            
+            /* Estilos para valores especiales */
+            .valor-nulo {
+              color: #6c757d;
+              font-style: italic;
+            }
+            
+            .valor-vacio {
+              color: #adb5bd;
+              font-style: italic;
+            }
+            
+            .valor-fecha {
+              color: #4895ef;
+            }
+            
+            .valor-monto {
+              color: #4cc9f0;
+              font-weight: 500;
+            }
+            
+            .valor-booleano {
+              padding: 2px 6px;
+              border-radius: 4px;
+              font-size: 12px;
+              
+              &.verdadero {
+                background-color: rgba(76, 201, 240, 0.1);
+                color: #0d6efd;
+              }
+              
+              &.falso {
+                background-color: rgba(247, 37, 133, 0.1);
+                color: #dc3545;
+              }
+            }
+            
+            .enlace-externo {
+              color: #4361ee;
+              text-decoration: none;
+              
+              &:hover {
+                text-decoration: underline;
+              }
+            }
+            
+            /* Estilos para objetos anidados */
+            .objeto-anidado {
+              padding: 6px;
+              background-color: #f8f9fa;
+              border-left: 2px solid #4361ee;
+              margin-top: 6px;
+              
+              div {
+                margin-bottom: 4px;
+              }
+            }
+            
+            /* Estilos para listas de valores */
+            .lista-valores {
+              margin: 0;
+              padding-left: 16px;
+            }
+          }
+        }
+      }
+      
+      /* Mensaje cuando no hay resultados */
+      .sin-resultados {
+        text-align: center;
+        padding: 30px 12px;
+        
+        .no-results-icon {
+          font-size: 40px;
+          color: #6c757d;
+          margin-bottom: 12px;
+        }
+        
+        h3 {
+          font-size: 18px;
+          margin-bottom: 6px;
+        }
+        
+        p {
+          color: #6c757d;
+          margin-bottom: 12px;
+        }
+        
+        .btn-limpiar {
+          padding: 8px 16px;
+          background-color: #4361ee;
+          color: white;
+          border: none;
+          border-radius: 6px;
+          font-size: 13px;
+          cursor: pointer;
+        }
+      }
+    }
+    
+    /* ==============================================
+       ESTILOS DEL FOOTER
+       ============================================== */
+    .footer-datos {
+      padding-top: 16px;
+      border-top: 1px solid #e9ecef;
+      font-size: 12px;
+      
+      .footer-content {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        
+        .system-info {
+          strong {
+            display: block;
+          }
+        }
+        
+        .update-info {
+          display: flex;
+          justify-content: space-between;
+        }
+      }
+    }
+    
+    /* ==============================================
+       ESTILOS PARA EL ESTADO DE CARGA (SKELETON)
+       ============================================== */
+    .skeleton-loading {
+      .skeleton-header {
+        height: 30px;
+        background-color: #e9ecef;
+        border-radius: 6px;
+        margin-bottom: 12px;
+        animation: pulse 1.5s infinite;
+      }
+      
+      .skeleton-filters {
+        height: 50px;
+        background-color: #e9ecef;
+        border-radius: 6px;
+        margin-bottom: 12px;
+        animation: pulse 1.5s infinite;
+      }
+      
+      .skeleton-cards {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 12px;
+        
+        .skeleton-card {
+          height: 150px;
+          background-color: #e9ecef;
+          border-radius: 6px;
+          animation: pulse 1.5s infinite;
+        }
+      }
+      
+      @keyframes pulse {
+        0% { opacity: 0.6; }
+        50% { opacity: 0.3; }
+        100% { opacity: 0.6; }
+      }
+    }
+    
+    /* ==============================================
+       ESTILOS PARA EL MENSAJE DE ERROR
+       ============================================== */
+    .error-message {
+      text-align: center;
+      padding: 30px 12px;
+      background-color: rgba(247, 37, 133, 0.05);
+      border-radius: 6px;
+      border: 1px solid rgba(247, 37, 133, 0.1);
+      
+      .error-icon {
+        font-size: 40px;
+        margin-bottom: 12px;
+      }
+      
+      h3 {
+        color: #dc3545;
+        margin-bottom: 6px;
+      }
+      
+      .btn-reintentar {
+        padding: 8px 16px;
+        background-color: #dc3545;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        font-size: 13px;
+        cursor: pointer;
+      }
+    }
+  }
+  
+  /* ==============================================
+     BREAKPOINT PARA TABLET (768px)
+     ============================================== */
+  @media (min-width: 768px) {
+    .ing-data-container {
+      padding: 16px;
+      
+      .header {
+        .header-content {
+          flex-direction: row;
+          align-items: center;
+          
+          .metadata-info {
+            gap: 16px;
+          }
+        }
+        
+        .filtros-superiores {
+          .filters-container {
+            .selector-rubro {
+              flex: 2;
+            }
+            
+            .btn-filtros, .btn-exportar {
+              flex: 1;
+            }
+          }
+        }
+      }
+      
+      .contenedor-datos {
+        .lista-datos {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 16px;
+        }
+      }
+      
+      .footer-datos {
+        .footer-content {
+          flex-direction: row;
+          justify-content: space-between;
+        }
+      }
+    }
+  }
+  
+  /* ==============================================
+     BREAKPOINT PARA ESCRITORIO (1024px)
+     ============================================== */
+  @media (min-width: 1024px) {
+    .ing-data-container {
+      max-width: 1200px;
+      padding: 20px;
+      
+      .header {
+        .header-content {
+          h1 {
+            font-size: 22px;
+          }
+        }
+      }
+      
+      .contenedor-datos {
+        .lista-datos {
+          grid-template-columns: repeat(3, 1fr);
+          gap: 20px;
+        }
+        
+        .tarjeta-dato {
+          .detalles-dato {
+            .campo-dato {
+              font-size: 14px;
+            }
+          }
+        }
+      }
+    }
+  }

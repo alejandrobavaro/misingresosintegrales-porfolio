@@ -1,0 +1,104 @@
+/* -------------------------------------------- */
+/* ESTILOS GENERALES DEL COMPONENTE */
+/* -------------------------------------------- */
+.main-content-novedades {
+  width: 100%;
+  overflow: hidden; // Oculta cualquier contenido que desborde
+}
+
+/* -------------------------------------------- */
+/* ESTILOS DEL CARRUSEL PRINCIPAL */
+/* -------------------------------------------- */
+.hero-carousel {
+  position: relative; // Para posicionar elementos hijos absolutamente
+  width: 100%;
+  height: 400px; // Altura fija del carrusel
+  overflow: hidden; // Oculta imágenes no activas
+
+  // Estilos para cada slide del carrusel
+  .carousel-slide {
+    position: absolute; // Posicionamiento superpuesto
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover; // Ajusta la imagen al contenedor
+    background-position: center; // Centra la imagen
+    opacity: 0; // Inicialmente invisible
+    transition: opacity 1s ease-in-out; // Transición suave
+
+    // Slide activo (visible)
+    &.active {
+      opacity: 1;
+    }
+  }
+
+  // Contenedor de los puntos indicadores
+  .carousel-dots {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    gap: 10px; // Espacio entre puntos
+
+    // Estilos de cada punto
+    .dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%; // Forma circular
+      background: rgba(255, 255, 255, 0.5); // Color semitransparente
+      border: none;
+      cursor: pointer; // Cambia el cursor al pasar
+      padding: 0;
+      transition: background 0.3s ease; // Transición de color
+
+      // Punto activo
+      &.active {
+        background: white; // Color sólido para el activo
+      }
+    }
+  }
+}
+
+/* -------------------------------------------- */
+/* CONTENEDOR PRINCIPAL DEL CONTENIDO */
+/* -------------------------------------------- */
+.content-wrapper {
+  max-width: 1200px; // Ancho máximo del contenido
+  margin: 0 auto; // Centrado horizontal
+  padding: 20px; // Espaciado interno
+}
+
+/* -------------------------------------------- */
+/* ESTILOS RESPONSIVOS */
+/* -------------------------------------------- */
+@media (max-width: 992px) {
+  // Cambia a disposición vertical en tablets
+  .novedades-section .content-row {
+    flex-direction: column;
+  }
+
+  .novedades-section .content-row .sidebar {
+    position: static; // Elimina el sticky en móviles
+  }
+}
+
+@media (max-width: 768px) {
+  // Reduce altura del carrusel en móviles
+  .hero-carousel {
+    height: 300px;
+  }
+}
+
+@media (max-width: 576px) {
+  // Ajustes para móviles pequeños
+  .hero-carousel {
+    height: 200px;
+  }
+
+  .content-wrapper {
+    padding: 15px; // Menos padding en móviles
+  }
+}

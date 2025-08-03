@@ -1,0 +1,27 @@
+/* -------------------------------------------- */
+/* ESTILOS DEL CONTENEDOR PRINCIPAL */
+/* -------------------------------------------- */
+.main-content-container {
+  width: 100%;       // Ocupa todo el ancho disponible
+  overflow: hidden;  // Oculta cualquier contenido que desborde
+}
+
+/* -------------------------------------------- */
+/* ESTILOS DEL CONTENEDOR INTERNO */
+/* -------------------------------------------- */
+
+
+
+.main-content-container .content-wrapper {
+  margin: 0 auto;
+  padding: 15px;
+  
+  @media (min-width: 768px) {
+    padding: 20px;
+    max-width: 1200px;
+  }
+  
+  @media (min-width: 1024px) {
+    padding: 30px;
+  }
+}

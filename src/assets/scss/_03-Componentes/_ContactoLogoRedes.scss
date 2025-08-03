@@ -1,0 +1,220 @@
+/* ----------------- CONTENEDORES PRINCIPALES ----------------- */
+
+// Grid padre contenedor
+.gridPadreContacto1 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); // Grid responsivo
+  justify-content: center;
+  align-items: start;
+  margin: 0 auto;
+  max-width: 1050px; // Ancho máximo
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); // Sombra sutil
+  border: 1px solid #e0e0e0; // Borde sutil
+
+  // Media queries para tablet
+  @media (max-width: 768px) {
+    padding: 15px;
+    gap: 15px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+
+  // Media queries para móvil
+  @media (max-width: 480px) {
+    padding: 10px;
+    gap: 10px;
+  }
+}
+
+// Contenedor de logos y redes
+.contact-logo-rede-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px; // Espacio entre columnas
+  padding: 20px;
+  border-radius: 8px;
+  background-color: #f8f9fa; // Fondo gris claro
+
+  // Media queries
+  @media (max-width: 768px) {
+    gap: 15px;
+    padding: 15px;
+  }
+
+  @media (max-width: 480px) {
+    gap: 10px;
+    padding: 10px;
+  }
+}
+
+/* ----------------- LOGOS ----------------- */
+
+// Columna de logos
+.logo-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 8px;
+  padding: 20px;
+  width: 100%;
+  max-width: 600px;
+  background-color: white;
+
+  // Media queries
+  @media (max-width: 768px) {
+    max-width: 300px;
+    padding: 15px;
+  }
+
+  @media (max-width: 480px) {
+    max-width: 100%;
+    padding: 10px;
+  }
+}
+
+// Logo principal
+.logo-main {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease; // Transición suave
+
+  // Efecto hover
+  &:hover {
+    transform: scale(1.05); // Escalado leve
+  }
+}
+
+// Contenedor de logos secundarios
+.logo-secondary-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px; // Espacio entre logos
+  justify-content: center;
+}
+
+// Logo especial (comentado en el componente)
+.logoPuchulita {
+  width: 180px;
+  height: auto;
+  transition: transform 0.3s ease;
+  position: relative;
+  z-index: 10;
+
+  // Media queries
+  @media (max-width: 768px) {
+    width: 140px;
+  }
+
+  @media (max-width: 480px) {
+    width: 120px;
+  }
+}
+
+// Logos secundarios
+.logo-secondary {
+  width: 80px;
+  height: auto;
+  transition: transform 0.2s ease; // Transición suave
+
+  // Efecto hover
+  &:hover {
+    transform: scale(1.1); // Escalado leve
+  }
+
+  // Media queries
+  @media (max-width: 768px) {
+    width: 70px;
+  }
+
+  @media (max-width: 480px) {
+    width: 60px;
+  }
+}
+
+/* ----------------- ICONOS DE CONTACTO ----------------- */
+
+// Contenedor de iconos de contacto
+.contact-icons {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; // Espacio entre elementos
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 20px;
+  width: 100%;
+  text-align: center;
+
+  // Media queries
+  @media (max-width: 768px) {
+    padding: 15px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 10px;
+  }
+}
+
+// Items de contacto individuales
+.contact-item {
+  border-radius: 6px;
+  padding: 12px;
+  border: 1px solid #e0e0e0;
+  background-color: white;
+  color: #495057;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px; // Espacio entre icono y texto
+  transition: all 0.2s ease; // Transición suave
+  text-decoration: none;
+
+  // Efecto hover
+  &:hover {
+    background-color: #4a6fa5; // Color azul
+    color: white; // Texto blanco
+    transform: translateY(-2px); // Efecto de levantar
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // Sombra
+  }
+}
+
+// Estilos para enlaces dentro de contact-item
+.contact-item a {
+  color: inherit; // Hereda el color del padre
+  text-decoration: none; // Sin subrayado
+}
+
+// Estilos para iconos
+.contact-item i {
+  font-size: 20px;
+  color: #4a6fa5; // Color azul
+
+  // Cambio de color al hover
+  .contact-item:hover & {
+    color: white;
+  }
+
+  // Media queries
+  @media (max-width: 768px) {
+    font-size: 18px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 16px;
+  }
+}
+
+/* ----------------- LÍNEA DIVISORIA ----------------- */
+
+// Línea divisoria transparente
+.transparent-hr {
+  border: none;
+  height: 1px;
+  background-color: #e0e0e0; // Color gris claro
+  margin: 20px 0; // Margen vertical
+}
